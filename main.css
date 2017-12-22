@@ -1,0 +1,15 @@
+#players {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+}
+
+#players p {
+  padding: 50px 30px 50px 30px;
+}
+
+#chooseYourWeapon {
+  display: flex;
+  justify-content: center; 
+}

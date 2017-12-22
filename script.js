@@ -1,0 +1,71 @@
+const choices = ['Rock', 'Paper', 'Scissors'];
+
+function randomNumber() {
+  return Math.floor(Math.random()*3);
+}
+
+function computerPlay() {
+  return choices[randomNumber()];
+}
+
+function checkForWins(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    return 'tie';
+  }
+
+  else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+    return 'player win';
+  }
+  else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+    return 'player win';
+  }
+  else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+    return 'player win';
+  }
+  else if (computerSelection === 'Scissors' && playerSelection === 'Paper') {
+    return 'computer win';
+  }
+  else if (computerSelection === 'Rock' && playerSelection === 'Scissors') {
+    return 'computer win';
+  }
+  else if (computerSelection === 'Paper' && playerSelection === 'Rock') {
+    return 'computer win';
+  }
+  else if (playerSelection !== 'Rock' && playerSelection !== 'Scissors' && playerSelection !== 'Paper') {
+    alert("You did not enter a valid input!");
+    return playOneRound();
+  }
+}
+
+function capitalizeUserInput(userInput) {
+  let lowerCaseInput = userInput.toLowerCase();
+  let capitalizeFirstLetter = lowerCaseInput.charAt(0).toUpperCase();
+
+  return capitalizeFirstLetter + lowerCaseInput.slice(1);
+}
+
+function playOneRound(playerSelection, computerSelection) {
+  computerSelection = computerPlay();
+  playerSelection = prompt('Choose either rock, paper or scissors!');
+  playerSelection = capitalizeUserInput(playerSelection);
+
+  return checkForWins(playerSelection, computerSelection);
+}
+
+function playGame() {
+  let computerTally = 0;
+  let playerTally = 0;
+  for (var i = 1; i < 6; i++) {
+    let resultOfRound = playOneRound();
+
+    if(resultOfRound == 'player win') {
+      playerTally++;
+    }
+    else if (resultOfRound == 'computer win') {
+      computerTally++;
+    }
+    else if (resultOfRound == 'tie') {
+    }
+  }
+  return;
+}
