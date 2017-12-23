@@ -1,4 +1,4 @@
-#chooseYourWeapon {
+.title {
   font-size: 70px;
   color: grey;
   font-weight: 100;
@@ -6,6 +6,23 @@
   width: 80%;
   margin: auto;
   padding: 20px 0 20px 0;
+  text-align: center;
+}
+
+#playerImage {
+  position: relative;
+  left: 700px;
+  width: 200px;
+  height: 200px;
+  clear: both;
+}
+
+#computerImage {
+  position: relative;
+  left: 200px;
+  width: 200px;
+  height: 200px;
+  clear: both;
 }
 
 #players {
