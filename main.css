@@ -3,13 +3,29 @@
   justify-content: center;
   align-items: center;
   flex-flow: row;
+  font-size: 50px;
 }
 
-#players p {
+#computer, #player {
   padding: 50px 30px 50px 30px;
 }
 
 #chooseYourWeapon {
+  font-size: 30px;
+  color: red;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  flex-flow: row;
+  flex-wrap: wrap;
+  padding: 40px 0 40px 0;
+}
+
+#rock, #paper, #scissors {
+  font-size: 40px;
+  margin: 0 10px 0 10px; 
 }
