@@ -1,11 +1,59 @@
-const choices = ['Rock', 'Paper', 'Scissors'];
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
 
-function randomNumber() {
-  return Math.floor(Math.random()*3);
+let gamePaused = false;
+
+rockButton.addEventListener('click', function(e) {
+  if(gamePaused === false) {
+    const playerChoice = e.target.innerHTML;
+    playOneRound(playerChoice);
+  }
+});
+
+paperButton.addEventListener('click', function(e) {
+  if (gamePaused === false) {
+    const playerChoice = e.target.innerHTML;
+    playOneRound(playerChoice);
+  }
+});
+
+scissorsButton.addEventListener('click', function(e) {
+  if(gamePaused === false) {
+    const playerChoice = e.target.innerHTML;
+    playOneRound(playerChoice);
+  }
+});
+
+function playOneRound(playerChoice) {
+  let computerChoice = computerPlay();
+  let result = checkForWins(playerChoice, computerChoice);
+  displayChoices(playerChoice, computerChoice);
+  displayWinner(result);
+  gamePaused = true;
+}
+
+function displayWinner(winner) {
+  const whoIsWinner = document.getElementById('chooseYourWeapon');
+  whoIsWinner.innerHTML = winner;
+}
+
+function displayChoices(playerChoice, computerChoice) {
+  const parentElement = document.getElementById('player');
+  const displayPlayerChoice = document.createElement('p');
+  displayPlayerChoice.innerHTML = playerChoice;
+  parentElement.appendChild(displayPlayerChoice);
+
+  const parentElement2 = document.getElementById('computer');
+  const displayComputerChoice = document.createElement('p');
+  displayComputerChoice.innerHTML = computerChoice;
+  parentElement2.appendChild(displayComputerChoice);
 }
 
 function computerPlay() {
-  return choices[randomNumber()];
+  let choices = ['Rock', 'Paper', 'Scissors'];
+  let randNumber = Math.floor(Math.random()*3);
+  return choices[randNumber];
 }
 
 function checkForWins(playerSelection, computerSelection) {
@@ -37,21 +85,12 @@ function checkForWins(playerSelection, computerSelection) {
   }
 }
 
-function capitalizeUserInput(userInput) {
-  let lowerCaseInput = userInput.toLowerCase();
-  let capitalizeFirstLetter = lowerCaseInput.charAt(0).toUpperCase();
 
-  return capitalizeFirstLetter + lowerCaseInput.slice(1);
-}
 
-function playOneRound(playerSelection, computerSelection) {
-  computerSelection = computerPlay();
-  playerSelection = prompt('Choose either rock, paper or scissors!');
-  playerSelection = capitalizeUserInput(playerSelection);
 
-  return checkForWins(playerSelection, computerSelection);
-}
 
+
+/*
 function playGame() {
   let computerTally = 0;
   let playerTally = 0;
@@ -69,3 +108,4 @@ function playGame() {
   }
   return;
 }
+*/
