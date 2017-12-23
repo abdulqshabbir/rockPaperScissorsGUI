@@ -1,3 +1,13 @@
+#chooseYourWeapon {
+  font-size: 70px;
+  color: grey;
+  font-weight: 100;
+  letter-spacing: 10px;
+  width: 80%;
+  margin: auto;
+  padding: 20px 0 20px 0;
+}
+
 #players {
   display: flex;
   justify-content: center;
@@ -7,14 +17,8 @@
 }
 
 #computer, #player {
-  padding: 50px 30px 50px 30px;
-}
-
-#chooseYourWeapon {
-  font-size: 30px;
-  color: red;
-  display: flex;
-  justify-content: center;
+  margin: 20px 100px 20px 100px;
+  border-bottom: solid 1px red;
 }
 
 .buttons {
@@ -34,5 +38,5 @@
   font-size: 40px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%; 
+  width: 100%;
 }
