@@ -7,19 +7,20 @@
   margin: auto;
   padding: 20px 0 20px 0;
   text-align: center;
+  border: solid 1px black;
 }
 
 #playerImage {
   position: relative;
-  left: 700px;
+  left: 600px;
   width: 200px;
   height: 200px;
-  clear: both;
+  clear: right;
 }
 
 #computerImage {
   position: relative;
-  left: 200px;
+  left: 50px;
   width: 200px;
   height: 200px;
   clear: both;
@@ -27,15 +28,24 @@
 
 #players {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-flow: row;
   font-size: 50px;
+}
+
+#computer {
+  position: relative;
+  left: 50px;
+}
+
+#player {
+  position: relative;
+  right: 50px;
 }
 
 #computer, #player {
   margin: 20px 100px 20px 100px;
   border-bottom: solid 1px red;
+  text-align: center;
 }
 
 .buttons {
@@ -44,11 +54,16 @@
   flex-flow: row;
   flex-wrap: wrap;
   padding: 40px 0 40px 0;
+
 }
 
 #rock, #paper, #scissors {
   font-size: 40px;
   margin: 0 10px 0 10px;
+  background-color: #30c1d4;
+  border-radius: 10%;
+  color: black;
+  font-weight: 300;
 }
 
 .playAgainButton {
