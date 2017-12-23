@@ -17,7 +17,7 @@
   justify-content: center;
 }
 
-#buttons {
+.buttons {
   display: flex;
   justify-content: center;
   flex-flow: row;
@@ -27,5 +27,12 @@
 
 #rock, #paper, #scissors {
   font-size: 40px;
-  margin: 0 10px 0 10px; 
+  margin: 0 10px 0 10px;
+}
+
+.playAgainButton {
+  font-size: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; 
 }

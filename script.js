@@ -31,6 +31,28 @@ function playOneRound(playerChoice) {
   displayChoices(playerChoice, computerChoice);
   displayWinner(result);
   gamePaused = true;
+  playAgain();
+}
+
+function playAgain() {
+  const container = document.getElementById('container');
+  const playAgainButton = document.createElement('button');
+  playAgainButton.classList.add('playAgainButton');
+  playAgainButton.textContent = 'Play Again?';
+  container.appendChild(playAgainButton);
+  playAgainButton.addEventListener('click', function(e) {
+    removeElementsForANewGame(playAgainButton);
+    gamePaused = false;
+  });
+}
+
+function removeElementsForANewGame(playAgainButton) {
+  const playerChoice = document.getElementById('playerChoice');
+  const computerChoice = document.getElementById('computerChoice');
+
+  playAgainButton.remove();
+  playerChoice.remove();
+  computerChoice.remove(); 
 }
 
 function displayWinner(winner) {
@@ -41,11 +63,13 @@ function displayWinner(winner) {
 function displayChoices(playerChoice, computerChoice) {
   const parentElement = document.getElementById('player');
   const displayPlayerChoice = document.createElement('p');
+  displayPlayerChoice.setAttribute('id', 'playerChoice');
   displayPlayerChoice.innerHTML = playerChoice;
   parentElement.appendChild(displayPlayerChoice);
 
   const parentElement2 = document.getElementById('computer');
   const displayComputerChoice = document.createElement('p');
+  displayComputerChoice.setAttribute('id', 'computerChoice');
   displayComputerChoice.innerHTML = computerChoice;
   parentElement2.appendChild(displayComputerChoice);
 }
